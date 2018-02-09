@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/DarkTheme"
+    tools:context="com.example.hanad.greenflagassignment1.Main3Activity">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"
+        android:layout_below="@+id/name"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Username"
+        android:layout_alignStart="@+id/Username"
+        android:layout_below="@+id/Username"
+        android:background="@android:color/white"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnImageSearch"
+        android:layout_alignRight="@+id/btnImageSearch"
+        android:layout_below="@+id/btnImageSearch"
+        android:layout_marginTop="14dp"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btnImageSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/password"
+
+        android:adjustViewBounds="true"
+        android:background="@android:color/holo_green_dark"
+        android:elevation="6dp"
+        android:minHeight="30dp"
+        android:onClick="onClick"
+        android:src="@drawable/gradient_button_background"
+        android:text="Change photo"
+        app:srcCompat="@drawable/gradient_button_background" />
+
+    <ImageView
+        android:id="@+id/uploadImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/password"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_toEndOf="@+id/age"
+        android:layout_toRightOf="@+id/age"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+
+    <Button
+        android:id="@+id/btnBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/age"
+        android:layout_alignStart="@+id/age"
+        android:layout_below="@+id/age"
+        android:layout_marginTop="14dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/holo_green_dark"
+        android:elevation="6dp"
+        android:minHeight="30dp"
+        android:onClick="onClick"
+        android:src="@drawable/gradient_button_background"
+        android:text="Choose birth date"
+        app:srcCompat="@drawable/gradient_button_background" />
+
+    <TextView
+        android:id="@+id/txtBirthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/age"
+        android:layout_alignLeft="@+id/btnBirthday"
+        android:layout_alignRight="@+id/age"
+        android:layout_alignStart="@+id/btnBirthday"
+        android:layout_below="@+id/btnBirthday"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/white"
+        android:hint="Not-Specified"
+        android:textColor="@android:color/black" />
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/RadioGroup"
+    android:layout_below="@+id/textView7"
+    android:layout_alignLeft="@+id/txtBirthday"
+    android:layout_alignStart="@+id/txtBirthday">
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtBirthday"
+        android:layout_alignStart="@+id/txtBirthday"
+        android:layout_below="@+id/txtBirthday"
+        android:background="@android:color/transparent"
+        android:buttonTint="@android:color/white"
+        android:duplicateParentState="true"
+        android:text="Male"
+        android:textColor="@android:color/white" />
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButton"
+        android:layout_alignStart="@+id/radioButton"
+        android:layout_below="@+id/radioButton"
+        android:buttonTint="@android:color/white"
+        android:checked="false"
+        android:duplicateParentState="true"
+        android:text="Female"
+        android:textColor="@android:color/white" />
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioButton2"
+        android:layout_alignStart="@+id/radioButton2"
+        android:layout_below="@+id/radioButton2"
+        android:buttonTint="@android:color/white"
+        android:checked="false"
+        android:duplicateParentState="true"
+        android:text="Not-specified"
+        android:textColor="@android:color/white" />
+</RadioGroup>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RadioGroup"
+        android:layout_alignStart="@+id/RadioGroup"
+        android:layout_below="@+id/txtBirthday"
+        android:layout_marginTop="13dp"
+        android:text="Gender"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/SaveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/uploadImage"
+        android:layout_alignRight="@+id/uploadImage"
+        android:layout_alignTop="@+id/RadioGroup"
+        android:layout_marginTop="84dp"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="SaveData"
+        android:text="Save" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RadioGroup"
+        android:layout_alignStart="@+id/RadioGroup"
+        android:layout_alignEnd="@id/password"
+        android:layout_below="@+id/RadioGroup"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dialog"
+        android:theme="@style/AppTheme" />
+
+</RelativeLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/DarkTheme"
+    tools:context="com.example.hanad.greenflagassignment1.Main2Activity">
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Password"
+        android:layout_alignStart="@+id/Password"
+        android:layout_below="@+id/Password"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email Address"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtEmail"
+        android:layout_alignStart="@+id/txtEmail"
+        android:layout_below="@+id/txtEmail"
+        android:width="300dip"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/RepeatePassword"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/RepeatePassword"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Create password"
+        android:textColor="@android:color/white" />
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtPassword"
+        android:layout_alignStart="@+id/txtPassword"
+        android:layout_below="@+id/txtPassword"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:width="300dip"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/TxtRepeatePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:layout_below="@+id/etName"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Repeate password"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/RepeatePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TxtRepeatePassword"
+        android:layout_centerHorizontal="true"
+        android:width="300dip"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+
+    <EditText
+        android:id="@+id/LongText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnContinue"
+        android:layout_centerHorizontal="true"
+        android:width="400dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="Your password should have a minimum of 8 characters and contian at least one number. One upppercase and one lower case letter. You can use special characters"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/btnContinue"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@id/btnContinue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:onClick="onClick"
+        android:background="@android:color/transparent"
+        android:text="Next" />
+    <ImageView
+        android:id="@+id/btnContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
+        android:padding="20dp"
+        app:srcCompat="@drawable/gradient_button_background" />
+
+
+
+</RelativeLayout>
