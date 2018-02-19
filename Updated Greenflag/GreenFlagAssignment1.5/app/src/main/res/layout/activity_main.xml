@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/DarkTheme"
+    tools:context="com.example.hanad.greenflagassignment1.MainActivity">
+
+    <ImageView
+        android:id="@+id/btnContinue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="true"
+        android:padding="20dp"
+        app:srcCompat="@drawable/gradient_button_background" />
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:paddingHorizontal="50dp"
+        android:layout_marginTop="60dp"
+
+        app:srcCompat="@drawable/logo_green_flag" />
+
+    <ImageView
+        android:id="@+id/tick1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
+        app:srcCompat="@drawable/tick" />
+
+    <ImageView
+        android:id="@+id/tick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignLeft="@+id/tick3"
+        android:layout_alignStart="@+id/tick3"
+        android:layout_alignTop="@+id/tick3"
+        android:layout_marginTop="38dp"
+        app:srcCompat="@drawable/tick" />
+
+    <ImageView
+        android:id="@+id/tick3"
+
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+
+        android:layout_alignLeft="@+id/tick1"
+        android:layout_alignStart="@+id/tick1"
+        android:layout_below="@+id/tick1"
+        android:layout_marginTop="11dp"
+        app:srcCompat="@drawable/tick" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/tick1"
+        android:layout_toRightOf="@+id/tick1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Car health updates"
+        android:textColor="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tick1"
+        android:layout_toEndOf="@+id/tick1"
+        android:layout_toRightOf="@+id/tick1"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Request a rescue online"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tick2"
+        android:layout_toEndOf="@+id/tick2"
+        android:layout_toRightOf="@+id/tick2"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Policy information"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:width="300dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:text="GreenFlag customers can create an account to access"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@id/btnContinue"
+        android:layout_alignRight="@id/btnContinue"
+        android:layout_marginBottom="23dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@android:color/transparent"
+        android:onClick="onClick"
+
+        android:text="Create an account" />
+
+</RelativeLayout>

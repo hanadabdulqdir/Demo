@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/DarkTheme"
+    android:orientation="vertical"
+    tools:context="com.example.hanad.greenflagassignment1.Main2Activity">
+
+    <EditText
+        android:id="@+id/txtPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mEmail"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/mEmail"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email Address"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/mEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPassword"
+        android:layout_centerHorizontal="true"
+        android:width="300dip"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/txtEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mEmail"
+        android:layout_alignStart="@+id/mEmail"
+        android:layout_below="@+id/mEmail"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Create password"
+        android:textColor="@android:color/white" />
+    <EditText
+        android:id="@+id/mEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtEmailAddress"
+        android:layout_alignStart="@+id/txtEmailAddress"
+        android:layout_below="@+id/txtEmailAddress"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:width="300dip"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/TxtRepeatePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/mEmail"
+        android:layout_alignStart="@+id/mEmail"
+        android:layout_below="@+id/mEmail"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Repeate password"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/repeatePassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TxtRepeatePassword"
+        android:layout_alignStart="@+id/TxtRepeatePassword"
+        android:layout_below="@+id/TxtRepeatePassword"
+        android:width="300dip"
+        android:background="@android:color/white"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+
+    <ImageButton
+        android:id="@+id/btnImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtLong"
+        android:onClick="onClick"
+        android:src="@drawable/gradient_button_background"
+        app:srcCompat="@drawable/gradient_button_background" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnImages"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Next"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/txtLong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/repeatePassword"
+        android:layout_centerHorizontal="true"
+        android:width="500dp"
+        android:layout_marginTop="10dp"
+        android:text="Your password should have a minimum of 8 characters and contian at least one number. One upppercase and one lower case letter. You can use special characters"
+        android:textColor="@android:color/white" />
+
+
+</RelativeLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:theme="@style/Theme.AppCompat.NoActionBar"
+        android:orientation="vertical"
+        tools:context="com.example.hanad.greenflagassignment1.MainActivity">
+
+
+    <ImageView
+        android:id="@+id/Logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tick1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:adjustViewBounds="true"
+        android:paddingHorizontal="50dp"
+        app:srcCompat="@drawable/logo_green_flag" />
+
+    <ImageView
+        android:id="@+id/tick1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="63dp"
+        android:layout_marginStart="63dp"
+        app:srcCompat="@drawable/tick" />
+
+    <ImageView
+        android:id="@+id/tick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tick3"
+        android:layout_alignStart="@+id/tick3"
+        android:layout_below="@+id/tick3"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@drawable/tick" />
+
+    <ImageView
+        android:id="@+id/tick3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tick1"
+        android:layout_alignStart="@+id/tick1"
+        android:layout_below="@+id/tick1"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@drawable/tick" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tick3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:text="Car health updates" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tick1"
+        android:layout_toLeftOf="@+id/textView6"
+        android:layout_toStartOf="@+id/textView6"
+        android:text="Request a rescue online" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tick2"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:text="Policy information" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tick1"
+        android:layout_alignLeft="@+id/tick1"
+        android:layout_alignStart="@+id/tick1"
+        android:layout_marginBottom="23dp"
+        android:text="GreenFlag customers can create an account to access" />
+
+    <ImageButton
+        android:id="@+id/btnImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tick2"
+        android:layout_marginTop="39dp"
+        android:onClick="onClick"
+        android:src="@drawable/gradient_button_background"
+        app:srcCompat="@drawable/gradient_button_background" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnImages"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Next"
+        android:textSize="30sp" />
+
+</RelativeLayout>
