@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.GridLayoutManager;
 import com.example.hanad.greenflagassignment1.controller.RealmHelper;
-import com.example.hanad.greenflagassignment1.model.AccountCustomerModel;
+//import com.example.hanad.greenflagassignment1.model.AccountCustomerModel;
 import com.example.hanad.greenflagassignment1.model.CustomerModel;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class RecyclerCustomer extends AppCompatActivity {
     private Realm realm,realm2;
     private RealmHelper realmHelper;
     private ArrayList<CustomerModel> arrayList;
-    private ArrayList<AccountCustomerModel> customerModelArrayList;
+    //private ArrayList<AccountCustomerModel> customerModelArrayList;
     ArrayList<String> stringArrayList;
     private RecyclerView recyclerView;
 

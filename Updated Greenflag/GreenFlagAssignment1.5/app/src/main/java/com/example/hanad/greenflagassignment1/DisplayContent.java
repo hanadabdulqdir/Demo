@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import io.realm.Realm;
 
 import com.example.hanad.greenflagassignment1.controller.RealmHelper;
-import com.example.hanad.greenflagassignment1.model.AccountCustomerModel;
+//import com.example.hanad.greenflagassignment1.model.AccountCustomerModel;
 import com.example.hanad.greenflagassignment1.model.CustomerModel;
 
 public class DisplayContent extends ListActivity {
@@ -19,7 +19,7 @@ public class DisplayContent extends ListActivity {
 
     private ArrayList<CustomerModel> arrayList;
 
-    private ArrayList<AccountCustomerModel> customerModelArrayList;
+    //private ArrayList<AccountCustomerModel> customerModelArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +47,14 @@ public class DisplayContent extends ListActivity {
          *
          */
 
-        customerModelArrayList = new ArrayList<>();
-        customerModelArrayList = realmHelper.getAccountCustomerModels();
-
-        ArrayAdapter<AccountCustomerModel> arrayAccountAdapter = new ArrayAdapter<AccountCustomerModel>(
-                DisplayContent.this,
-                android.R.layout.simple_list_item_2);
-
-        getListView().setAdapter(arrayAccountAdapter);
+//        customerModelArrayList = new ArrayList<>();
+//        customerModelArrayList = realmHelper.getAccountCustomerModels();
+//
+//        ArrayAdapter<AccountCustomerModel> arrayAccountAdapter = new ArrayAdapter<AccountCustomerModel>(
+//                DisplayContent.this,
+//                android.R.layout.simple_list_item_2);
+//
+//        getListView().setAdapter(arrayAccountAdapter);
 
 
     }

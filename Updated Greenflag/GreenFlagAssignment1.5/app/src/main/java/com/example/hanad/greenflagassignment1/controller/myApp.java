@@ -1,4 +1,4 @@
-package com.example.hanad.greenflagassignment1;
+package com.example.hanad.greenflagassignment1.controller;
 
 import android.app.Application;
 

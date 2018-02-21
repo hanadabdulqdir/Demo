@@ -159,13 +159,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/gradient_button_background"
-        android:onClick="onClick"
+        android:onClick="onValidate"
         android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintVertical_bias="0.981"
+        tools:ignore="OnClick" />
 
 
 </android.support.constraint.ConstraintLayout>

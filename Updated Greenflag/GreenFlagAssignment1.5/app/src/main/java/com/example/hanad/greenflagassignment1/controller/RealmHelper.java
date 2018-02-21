@@ -4,7 +4,6 @@ package com.example.hanad.greenflagassignment1.controller;
  * Created by hanad on 02/02/2018.
  */
 
-import com.example.hanad.greenflagassignment1.model.AccountCustomerModel;
 import com.example.hanad.greenflagassignment1.model.CustomerModel;
 
 import java.util.ArrayList;
@@ -18,12 +17,11 @@ import io.realm.RealmResults;
  * 3.
  */
 public class RealmHelper {
-    Realm realm,realm2;
+    Realm realm;
 
 
     public RealmHelper(Realm realm) {
         this.realm = realm;
-        this.realm2 = realm2;
     }
 
 
@@ -50,27 +48,4 @@ public class RealmHelper {
         return customerModelsArrayList;
     }
 
-
-    public void saveAccountCustomer(final AccountCustomerModel AccountCustomerModel) {
-
-        //asyncr
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm2) {
-                realm2.copyToRealm(AccountCustomerModel);
-            }
-        });
-    }
-
-    public ArrayList<AccountCustomerModel> getAccountCustomerModels() {
-        ArrayList<AccountCustomerModel> customerAccountModelsArrayList = new ArrayList<>();
-
-        RealmResults<AccountCustomerModel> realmResults = realm2.where(AccountCustomerModel.class).findAll();
-
-        for (AccountCustomerModel accountCustomerModel : realmResults) {
-
-            customerAccountModelsArrayList.add(accountCustomerModel);
-        }
-        return customerAccountModelsArrayList;
-    }
 }

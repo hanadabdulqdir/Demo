@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -54,7 +55,9 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
     Button btn;
     private static final int CAMERA_REQUEST = 123;
     ImageView imageView;
-    static final Integer CAMERA = 0x5;
+    private static final int CAMERA_PERMISSION_REQUEST_CODE = 0x5;
+    private static final int READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 0x2;
+    private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 0x3;
 
 
     @Override
@@ -63,6 +66,11 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
         setContentView(R.layout.activity_main3);
         getSupportActionBar().setTitle("Enter Information");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        askForPermission(Manifest.permission.CAMERA, READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
+        askForPermission(Manifest.permission.CAMERA, WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE);
+        askForPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_REQUEST_CODE);
 
         init();
         initRealm();
@@ -117,19 +125,19 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
         boolean checked = true;
 
         // Check which radio button was clicked
-        switch(checkedId) {
+        switch (checkedId) {
             case R.id.radioButton:
                 if (checked)
                     Toast.makeText(this, "Selected Male ", Toast.LENGTH_SHORT).show();
-                    break;
+                break;
             case R.id.radioButton2:
                 if (checked)
                     Toast.makeText(this, "Selected Female ", Toast.LENGTH_SHORT).show();
-                    break;
+                break;
             case R.id.radioButton3:
                 if (checked)
                     Toast.makeText(this, "Not Specified ", Toast.LENGTH_SHORT).show();
-                    break;
+                break;
         }
 //        String currentSelected = onRadioButtonClicked(checkedId);
 //        TextView currentSelceted = (TextView)findViewById(R.id.firstGroup);
@@ -150,13 +158,44 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
     }
 
     public void onClick(View view) {
-        askForPermission(Manifest.permission.CAMERA, CAMERA);
+            openCamera();
+
+        // onRadioButtonClicked(view);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+
+        if (grantResults.length > 0) {
+
+            switch (requestCode) {
+                case WRITE_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE:
+                    //read from I/O
+                    break;
+                case READ_EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE:
+                    //open I/O
+                    break;
+                case CAMERA_PERMISSION_REQUEST_CODE:
+                    if(grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                        openCamera();
+                    }
+                    break;
+                // permission was granted, yay! Do the
+                // contacts-related task you need to do.
+
+            }
+        } else {
+
+            Toast.makeText(this, "Failed to permit camera access.", Toast.LENGTH_SHORT).show();
+
+            // permission denied, boo! Disable the
+            // functionality that depends on this permission.
+        }
+    }
+
+    private void openCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, CAMERA_REQUEST);
-
-
-       // onRadioButtonClicked(view);
-
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -167,23 +206,24 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
     }
 
 
-    private void askForPermission(String permission, Integer requestCode) {
+    private boolean askForPermission(String permission, Integer requestCode) {
         if (ContextCompat.checkSelfPermission(Main3Activity.this, permission) != PackageManager.PERMISSION_GRANTED) {
 
             // Should we show an explanation?
             if (ActivityCompat.shouldShowRequestPermissionRationale(Main3Activity.this, permission)) {
-
+                Log.i("First check", "Banana");
                 //This is called if user has denied the permission before
                 //In this case I am just asking the permission again
                 ActivityCompat.requestPermissions(Main3Activity.this, new String[]{permission}, requestCode);
-
+                Log.i("Second check", "Banana");
             } else {
 
                 ActivityCompat.requestPermissions(Main3Activity.this, new String[]{permission}, requestCode);
+                Log.i("Thrid check", "Banana");
             }
-        } else {
-            Toast.makeText(this, "" + permission + " is already granted.", Toast.LENGTH_SHORT).show();
+            return false;
         }
+        return true;
     }
 
     @SuppressLint("WrongViewCast")
@@ -193,8 +233,8 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
         editTextPassword = findViewById(R.id.password);
         editTextAge = findViewById(R.id.age);
         editBirthday = findViewById(R.id.txtBirthday);
-        imageView=findViewById(R.id.uploadImage);
-        spinner=findViewById(R.id.mCountry);
+        imageView = findViewById(R.id.uploadImage);
+        spinner = findViewById(R.id.mCountry);
         GengerRadioGroup = findViewById(R.id.mRadio);
 
     }
@@ -210,7 +250,7 @@ public class Main3Activity extends AppCompatActivity implements DatePickerDialog
                 editTextName.getText().toString(), editTextUsername.getText().toString(),
                 editTextPassword.getText().toString(), editTextAge.getText().toString(),
                 editBirthday.getText().toString(), spinner.getSelectedItem().toString(),
-                imageView.getDrawable().toString()," dummy gender"
+                imageView.getDrawable().toString(), " dummy gender"
         );
 
         realmHelper.saveCustomer(customerModel);

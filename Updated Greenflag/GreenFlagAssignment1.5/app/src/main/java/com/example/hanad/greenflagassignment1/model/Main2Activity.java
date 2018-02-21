@@ -15,7 +15,7 @@ public class Main2Activity extends ListActivity {
     private RealmHelper realmHelper;
     private ArrayList<CustomerModel> arrayList;
     ArrayList<String> stringArrayList;
-    private ArrayList<AccountCustomerModel> accountArrayList;
+    //private ArrayList<AccountCustomerModel> accountArrayList;
 
 
     @Override
@@ -52,35 +52,6 @@ public class Main2Activity extends ListActivity {
                 stringArrayList);
         getListView().setAdapter(arrayAdapter);
 
-        /**
-         * Account login
-         */
-
-        accountArrayList = new ArrayList<>();
-        accountArrayList = realmHelper.getAccountCustomerModels();
-        stringArrayList = new ArrayList<>();
-        for (
-                int i = 0; i < accountArrayList.size(); i++)
-
-        {
-            stringArrayList.add(accountArrayList.get(i).getEmail());
-            stringArrayList.add(accountArrayList.get(i).getRepeatPassword());
-        }
-
-        /**
-         * Get Model
-         * Put the model in the Adapter
-         * Assign the adapter to the view
-         */
-
-        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<String>(
-                Main2Activity.this,
-                android.R.layout.simple_list_item_2,
-                stringArrayList);
-
-        getListView().
-
-                setAdapter(arrayAdapter1);
     }
 
 }
